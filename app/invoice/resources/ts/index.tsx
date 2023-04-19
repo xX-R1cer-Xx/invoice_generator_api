@@ -1,11 +1,12 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
+import React from 'react';
+// https://reactjs.org/docs/react-dom-client.html
+import * as ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-const container = document.getElementById("app");
-const root = createRoot(container!); // createRoot(container!) if you use TypeScript
-
-root.render(
-    <React.StrictMode>
-        <div className="text-red">Hello World</div>
-    </React.StrictMode>
-);
+const rootElement = document.getElementById('root');
+// https://blog.logrocket.com/how-to-use-typescript-with-react-18-alpha/
+if (!rootElement) throw new Error('Failed to find the root element');
+const root = ReactDOM.createRoot(rootElement);
+root.render(<App/>);
